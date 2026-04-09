@@ -72,7 +72,7 @@
 
 **После валидации проекта с раскомментированным участком кода, возникают следующие ошибки:**
    - `All resource blocks must have 2 labels (type, name)` - говорит о том, что блок resource должен содержать две метки - тип ресурса и локальное имя ресурса. В нашем случае тип ресурса указан `"docker_image"`, а локальное имя отсутствует.
-   - `A name must start with a letter or underscore and may contain only letters, digits, underscores, and dashes` - говорит о том, что имя ресурса должно начинаться с буквы или подчеркивания и может содержать только буквы, цифры, подчеркивания и дефисы. В нашем случает имя начинается с цифры - `"1nginx"`
+   - `A name must start with a letter or underscore and may contain only letters, digits, underscores, and dashes` - говорит о том, что имя ресурса должно начинаться с буквы или подчеркивания и может содержать только буквы, цифры, подчеркивания и дефисы. В нашем случает имя начинается с цифры - `"1nginx"`  
 **После исправления вышеописанных ошибок (если больше в коде ничего не править), при дальнейшем запуске возникнут следующие ошибки:**
    - `A managed resource "random_password" "random_string_FAKE" has not been declared in the root module` - В ссылке на ресурс используется имя `"random_string_FAKE"`, которое не соответствует реальному имени `"random_string"` объявленного ресурса `"random_password"`.
    - `This object has no argument, nested block, or exported attribute named "resulT". Did you mean "result"?` - У этого объекта нет аргумента, вложенного блока или экспортируемого атрибута с именем `"resulT"`. Вы имели в виду `"result"`? В данном проекте у нас есть параметр - `"result"`, параметра `"resulT"` - нет.
